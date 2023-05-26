@@ -1,0 +1,318 @@
+.no-margin {
+    margin-bottom: 0px !important;
+}
+
+.height-row {
+    height: 100vh;
+    position: relative;
+}
+
+.center-left {
+    position: relative;
+    top: 50%;
+    left: 20% !important;
+    transform: translate(-50%, -50%);
+}
+
+.background-login {
+    background-image: url("../../assets/images/bg-moutain.svg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.content-background {
+    text-align: center;
+}
+
+.content-background h2 {
+    /* Bem vindo */
+    font-weight: bold;
+    color: white;
+    font-size: 5rem;
+    margin-bottom: 0;
+}
+
+.sub-titulo-1 {
+    /* Sub titulo bem-vindo */
+    font-weight: 300;
+    font-size: 20px;
+    color: white;
+    margin: 10px 0;
+}
+
+.sub-titulo-2 {
+    /* Sub titulo */
+    font-weight: 300;
+    color: white;
+    font-size: 20px;
+    margin-top: 10%;
+}
+
+
+.logoicc {
+    display: none;
+}
+
+.logo-icc {
+    width: 100%;
+}
+
+.logo-icc img {
+    width: 50%;
+    margin: 10px auto 0 !important;    
+    display: flex;
+}
+
+
+.btn-border {
+    padding: 12px 35px;
+    border: 3px solid #3E97D1;
+    background: transparent;
+    border-radius: 26px;
+    color: white;
+    margin: 10px 10px 5px;
+    display: inline-block;
+    font-weight: 500;
+    box-shadow: 0px 3px 0px #0000001c;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+}
+
+.btn-border:hover {
+    border: 3px solid #3E97D1;
+    background: #3E97D1;
+    border-radius: 26px;
+    color: white;
+}
+
+.text-criarConta {
+    margin: 20px 0;
+    font-weight: 600px;
+}
+
+.text-criarConta a {
+        font-weight: bold;       
+    }
+
+.btn-entrar {
+    background-image: linear-gradient(40deg, rgb(29, 116, 112) 0%, rgb(29, 187, 162) 100%);
+    border-radius: 5px;
+}
+
+.btn-hover:hover {
+    transform: translate(0, -5px);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.24);
+}
+
+.content-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 0 10%;
+}
+
+.color-icon {
+    color: #1d9e8e !important;
+}
+
+.padding-form {
+    padding: 0 4.75rem !important;
+}
+
+/* label focus color */
+
+.input-field input:focus+label {
+    color: #1d9e8e !important;
+}
+
+/* label underline focus color */
+
+.input-field input:focus {
+    border-bottom: 1px solid #1db39c !important;
+    box-shadow: 0 1px 0 0 #1db39c !important;
+}
+
+.cabecalho-modal {
+    background: #3E97D1;
+    padding: 15px;
+}
+
+.cabecalho-modal img {
+    height: 30px;
+    position: relative;
+    top: 2px;
+    margin-right: 10px;
+}
+
+.cabecalho-modal span {
+    font-size: 20px;
+    font-weight: 600;
+    color: white;
+}
+
+.modal-custom {
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+
+
+
+
+
+/*---------------------------------------------------------------------
+                    @Media Query - Responsividade
+-----------------------------------------------------------------------*/
+
+@media only screen and (max-width: 1360px) {
+    .form-footer-1 {
+        width: 100% !important;
+    }
+
+    .form-footer-2 {
+        width: 100% !important;
+        margin-top: 20px;
+    }
+}
+
+
+@media only screen and (max-width: 1280px) {
+    .background-login {
+        background-position: center;
+    }
+}
+
+
+@media only screen and (max-width: 1024px) {
+    .content-background h2 {
+        font-size: 4rem;
+    }
+    .sub-titulo-1 {
+        font-size: 17px;
+    }
+    .sub-titulo-2 {
+        font-size: 17px;
+    }
+   
+    .padding-form {
+        padding: 0 1.75rem !important;
+    }
+    
+}
+
+
+@media only screen and (max-width: 992px) {
+    .bg-mobile {
+        background-image: url("../../assets/images/bg-moutain.svg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
+
+    .center-left {
+        left: 50% !important;
+        top: 45%;
+    }
+
+    .text-form {
+        color: #dcffec;
+    }
+
+    .btn-entrar {
+        background: #ffffff;
+        color: #006158;
+        border-radius: 5px;
+        font-weight: 600;
+    }
+
+    .padding-form {
+        padding: 0 1.75rem !important;
+    }
+
+    .color-icon {
+        color: white !important;
+    }
+
+    .color-text {
+        color: white !important;
+    }
+
+    /* label focus color */
+    .input-field input:focus+label {
+        color: white !important;
+    }
+
+    /* label underline focus color */
+    .input-field input:focus {
+        border-bottom: 1px solid white !important;
+        box-shadow: 0 1px 0 0 white !important;
+    }
+
+    /* label color */
+    .input-field label {
+        color: white !important;
+    }
+
+    /* label focus color */
+    .input-field input:focus+label {
+        color: white !important;
+    }
+
+    .text-criarConta {
+        margin: 20px 0;
+        text-align: right;
+        color: #fff;
+        width: 100%;
+    }
+
+    .text-criarConta a {
+        color: #a2fbed; 
+        font-weight: 500;       
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .background-login-mobile {
+        background-position: top;
+    }
+
+    .padding-form {
+        padding: 0 .75rem !important;
+    }
+
+    .btn-entrar {
+        background: #ffffff;
+        color: #006158;
+        border-radius: 5px;
+        font-weight: 600;
+        width: 100%;
+    }
+
+    .jconfirm.jconfirm-white .jconfirm-box, .jconfirm.jconfirm-light .jconfirm-box {     
+        width: 80%  !important;
+    }
+
+    .text-criarConta {
+        margin: 20px 0;
+        text-align: center;
+        color: #fff;
+        width: 100%;
+    }
+
+    .text-criarConta a {
+        color: #a2fbed; 
+        font-weight: 500;       
+    }
+}
+
+@media only screen and (max-width: 320px) {
+    .content-logo img {
+        height: 90px;
+    }
+}

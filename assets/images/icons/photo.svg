@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 511 511" style="enable-background:new 0 0 511 511;" xml:space="preserve" width="512px" height="512px" class=""><g><g>
+	<g>
+		<rect x="71.5" y="55.5" style="fill:#B7E9CD" width="432" height="336" data-original="#B1A5BE" class="" data-old_color="#A4E4C0"/>
+		<rect x="71.5" y="95.5" style="fill:#349895" width="392" height="296" data-original="#9D8EAD" class="" data-old_color="#237270"/>
+		<g>
+			<rect x="7.5" y="119.5" style="fill:#F5F4F7;" width="432" height="336" data-original="#F5F4F7" class=""/>
+			<polygon style="fill:#349895" points="7.5,366.5 111,255 223.5,367.5 383.5,207.5 439.5,263.5 439.5,455.5 7.5,455.5    " data-original="#BFE666" class="" data-old_color="#82A338"/>
+			<circle style="fill:#B7E9CD" cx="223.5" cy="199.5" r="40" data-original="#F0E513" class="active-path" data-old_color="#F5F4F7"/>
+		</g>
+	</g>
+	<g>
+		<path d="M503.5,48h-432c-4.142,0-7.5,3.358-7.5,7.5V112H7.5c-4.142,0-7.5,3.358-7.5,7.5v336c0,4.142,3.358,7.5,7.5,7.5h432    c4.142,0,7.5-3.358,7.5-7.5V399h56.5c4.142,0,7.5-3.358,7.5-7.5v-336C511,51.358,507.642,48,503.5,48z M15,448v-78.555    l96.201-103.637l106.996,106.996c2.889,2.889,7.717,2.889,10.606,0L383.5,218.106l48.5,48.5V448H15z M496,384h-49V119.5    c0-4.142-3.358-7.5-7.5-7.5h-87c-4.142,0-7.5,3.358-7.5,7.5s3.358,7.5,7.5,7.5H432v118.394l-43.197-43.197    c-2.929-2.929-7.678-2.929-10.606,0L223.5,356.894L116.303,249.697c-2.964-2.964-7.945-2.874-10.8,0.201L15,347.396V127h301    c4.142,0,7.5-3.358,7.5-7.5s-3.358-7.5-7.5-7.5H79V63h417V384z" data-original="#000000" class=""/>
+		<path d="M223.5,152c-26.191,0-47.5,21.309-47.5,47.5s21.309,47.5,47.5,47.5s47.5-21.309,47.5-47.5S249.691,152,223.5,152z     M223.5,232c-17.92,0-32.5-14.58-32.5-32.5s14.58-32.5,32.5-32.5s32.5,14.58,32.5,32.5S241.42,232,223.5,232z" data-original="#000000" class=""/>
+	</g>
+</g></g> </svg>

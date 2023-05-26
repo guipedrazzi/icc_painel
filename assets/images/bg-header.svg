@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="3261" height="1336">
+	<defs>
+		<linearGradient id="gradient_0" gradientUnits="userSpaceOnUse" x1="14.105042" y1="593.52704" x2="3268.6123" y2="592.33319">
+			<stop offset="0" stop-color="rgb(35,96,105)"/>
+			<stop offset="1" stop-color="rgb(30,180,158)"/>
+		</linearGradient>
+	</defs>
+	<path fill="url(#gradient_0)" stroke="none" transform="matrix(0.9993 0 0 0.9993 1.71191 0.286865)" d="M0 0L3261 0C3261 0 3260.96 1089.26 3261 1265.15C1908.72 1499.95 1019.69 1054.92 0 1295.34C2.12185 1297.74 0 0 0 0Z"/>
+	<defs>
+		<clipPath id="clip_0">
+			<path d="M3260.43 0.286865L1.71191 0.286865C1.71191 0.286865 3.82285 1291.35 1.72601 1294.72C1.72131 1294.72 1.71661 1294.72 1.71191 1294.72C1.71387 1294.72 1.71583 1294.73 1.71778 1294.73C1.72053 1294.73 1.72328 1294.72 1.72601 1294.72C501.317 1176.93 969.522 1223.79 1476.29 1274.51C2003.13 1327.24 2571.64 1384.14 3260.43 1264.55C3260.39 1088.78 3260.43 0.286865 3260.43 0.286865Z" clip-rule="evenodd"/>
+		</clipPath>
+	</defs>
+	<g clip-path="url(#clip_0)">
+		<path fill="none" stroke="rgb(131,90,90)" vector-effect="non-scaling-stroke" stroke-width="1" stroke-miterlimit="4" transform="matrix(0.9993 0 0 0.9993 1.71191 0.286865)" d="M0 0L3261 0C3261 0 3260.96 1089.26 3261 1265.15C1908.72 1499.95 1019.69 1054.92 0 1295.34C2.12185 1297.74 0 0 0 0Z"/>
+	</g>
+</svg>
