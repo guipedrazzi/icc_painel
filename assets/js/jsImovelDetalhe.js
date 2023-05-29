@@ -1,5 +1,19 @@
 $(document).ready(function() {
 	form = "";
+
+	//PARA VERIFICAR TAMANHO DO ARQUIVO COM JAVASCRIPT
+	const input = document.querySelector("#fileUpload")
+	input.addEventListener("change", function(e) {
+	const fileSize = e.target.files[0].size / 1024 / 1024; // para mb
+	
+		if (fileSize > 4) {
+			alert("O arquivo tem mais de 4mb!")
+			$("#fileUpload").val('');
+			$(".file-path").val('');
+		}
+	
+	});
+
 	
 	//PARA UTILIZAR O FORMDATA, MELHOR JEITO DE ENVIAR DADOS DO FORMULARIO
 	$('#fileUpload').change(function (event) {
@@ -78,21 +92,22 @@ function enviaArq()
                 // utilizar o retorno
                 // console.log(data);
                 data = JSON.parse(data);
-                //console.log(data);
+                console.log(data);
                 if(data.success == 1)
                 {
                 	//mostra a div
                 	$("#ajaxresult").show();
 
-                	var ret = "<tr id='arquivo_"+data.id_foto+"'>";
+                	var ret = "<tr id='arquivo_"+data.id_arquivo+"'>";
                 	ret += "<td>"+data.nome_arquivo+"</td>";
                 	ret += "<td><a href='../../"+data.link_arq+"' target='_blank' class='btn btn-floating btn-visualizar-foto' ><i class='material-icons'>visibility</i></a></td>";
-                	ret += "<td><a href='#!' class='btn red btn-floating' onclick='excluirArquivo("+data.id_foto+","+'"'+data.nome_arquivo+'"'+")'><i class='material-icons left' >clear</i></a></td>";
-                	ret += "<td><p><label><input class='with-gap' name='destaque' onChange='marcarFotoDestaque();' type='radio' value='"+data.id_foto+"' id='test"+data.id_foto+"'  /><span for='test"+data.id_foto+"'></span></label</p></td>";
+                	ret += "<td><a href='#!' class='btn red btn-floating' onclick='excluirArquivo("+data.id_arquivo+","+'"'+data.nome_arquivo+'"'+")'><i class='material-icons left' >clear</i></a></td>";
+                	ret += "<td><p><label><input class='with-gap' name='destaque' onChange='marcarFotoDestaque();' type='radio' value='"+data.id_arquivo+"' id='test"+data.id_arquivo+"'  /><span for='test"+data.id_arquivo+"'></span></label</p></td>";
                 	ret += "</tr>";
                 	//mostrar os arquivos já enviados
                 	$("#respostaAjax").append(ret);
                 	alert("Foto adicionada com sucesso!");
+					$('#modal_addfotos').modal('close');
                 }
                 else
                 {
