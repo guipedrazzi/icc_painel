@@ -35,7 +35,7 @@ function listarImovel(page = 0)
 		data: {page: page},
 		success: function(data)
 		{
-			console.log(data);
+			//console.log(data);
 			data = JSON.parse(data);
 
 			$(".pagCima").html(data['pagCima']);

@@ -155,9 +155,9 @@ class ajax_Controller extends controller
 
 	public function ajax_deleta_arquivo()
 	{
-		//print_r($_POST);
-
+		// var_dump($_POST);exit();
 		$objImovel = new Imovel();
+
 
 		if(isset($_POST) && !empty($_POST))
 		{
@@ -165,6 +165,17 @@ class ajax_Controller extends controller
 
 			if($objImovel->excluirArquivoByIdArquivo($_POST['idarquivo']))
 			{
+				//Se excluiu aquele arquivo do banco de dados e ele era destaque, marca destaque o id mais próximo daquele imovel
+				if($dadosArq['destaque'] == 1)
+				{
+					if($objImovel->markLastAddPhoto($_POST['id_imovel']))
+					{
+						$arrJson = array('success' => 1,
+								'msg' => 'Arquivo excluído era destaque! Foi marcado como destaque o mais recente arquivo!');
+					}
+					
+				}
+
 				unlink($dadosArq['link_img']);
 
 				$arrJson = array('success' => 1,

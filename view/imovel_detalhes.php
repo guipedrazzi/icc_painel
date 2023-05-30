@@ -346,7 +346,7 @@
 							<span class="flow-text title-text">Adicionar Foto</span>
 						</p>
 						<div class="subtitle-info">
-							<span>Você pode selecionar de um à cinco arquivos de uma vez.</span>	
+							<span>Você pode selecionar de um arquivo vez.</span>	
 							<br>	
 						</div><!-- subtitle-info -->
 					</div><!-- title-content -->
@@ -358,7 +358,7 @@
 				<div class="file-field input-field">
 					<div class="btn">
 						<span>Escolher Arquivo</span>
-						<input type="file" name="fileUpload" id="fileUpload" multiple>
+						<input type="file" name="fileUpload" id="fileUpload" >
 					</div><!-- btn -->
 
 					<div class="file-path-wrapper">

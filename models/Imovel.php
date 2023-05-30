@@ -313,7 +313,7 @@ class Imovel extends model
         return false;
     }
 
-    // VERIF SE IMOVEL TEM FOTOS 6 FOTOS OU MAIS
+    // VERIF SE IMOVEL TEM 5 FOTOS OU MAIS
     public function verifQntFotos($id_imovel)
     {
         $sql = $this->pdo->query("SELECT COUNT(*) as tot FROM imovel_fotos WHERE id_imovel = {$id_imovel}");
@@ -350,7 +350,24 @@ class Imovel extends model
 
         // $this->pdo->rollBack();
         return false;
+    }
 
+    //MARCAR COMO DESTAQUE A ULTIMA FOTO ADICIONADA NAQUELE IMÓVEL.
+    public function markLastAddPhoto($id_imovel)
+    {
+        $query = $this->pdo->prepare("SELECT id_foto FROM imovel_fotos WHERE id_imovel = :id_imovel ORDER BY id_foto DESC LIMIT 1");
+        $query->bindValue(":id_imovel",$id_imovel);
+        $query->execute();
+        if($query->rowCount() == 1)
+        {
+            $result = $query->fetch(PDO::FETCH_ASSOC);
+            $sql = $this->pdo->query("UPDATE imovel_fotos SET destaque = '1' WHERE id_foto = {$result['id_foto']}");
+            if($sql->rowCount() > 0)
+            {
+                return true;
+            }
+        }
+        return false;
     }
 
     // ADICIONAR FOTOS NO IMÓVEL SE FOR A PRIMEIRA FOTO DAQUELE MOVEL, MARCA COMO DESTAQUE
