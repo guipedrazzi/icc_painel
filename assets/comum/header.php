@@ -59,16 +59,16 @@
                     </ul>
                 </div><!-- collapsible-body -->
             </li>
-            <!-- <li>
-                <a class="collapsible-header sidenav-header-drop"><i class="material-icons icon-cor">shop</i>Anúncios<i class="material-icons right icon-sidenav-drop">arrow_drop_down</i></a>
+             <li>
+                <a class="collapsible-header sidenav-header-drop"><i class="material-icons icon-cor">people</i>Proprietários<i class="material-icons right icon-sidenav-drop">arrow_drop_down</i></a>
                 <div class="collapsible-body sidenav-body-drop">
                     <ul>
-                        <li><a href="<?php echo RAIZ; ?>/imovel"><i class="material-icons icon-cor">keyboard_arrow_right</i>Pesquisar</a></li> 
-                        <li><a href="<?php echo RAIZ; ?>/imovel/adicionar"><i class="material-icons icon-cor">keyboard_arrow_right</i>Adicionar</a></li>
+                        <li><a href="<?php echo RAIZ; ?>/owner"><i class="material-icons icon-cor">keyboard_arrow_right</i>Pesquisar</a></li> 
+                        <li><a href="<?php echo RAIZ; ?>/owner/add"><i class="material-icons icon-cor">keyboard_arrow_right</i>Adicionar</a></li>
 
                     </ul>
-                </div><!-- collapsible-body
-            </li> -->
+                </div><!-- collapsible-body-->
+            </li> 
             <li>
                 <a class="collapsible-header sidenav-header-drop"><i class="material-icons icon-cor">person</i>Usuário<i class="material-icons right icon-sidenav-drop">arrow_drop_down</i></a>
                 <div class="collapsible-body sidenav-body-drop">
