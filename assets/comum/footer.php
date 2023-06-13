@@ -6,6 +6,8 @@
     <!-- Framework Front-end Matelialize (JS) -->
     <script src="<?php echo RAIZ; ?>/assets/framework/materialize/js/materialize.js"></script>
     <!-- Jquery AJAX.forms -->
+    
+    <script type="text/javascript" src="<?php echo RAIZ; ?>/assets/bibliotecas/maskplugin/dist/jquery.mask.min.js"></script>
 
     <script src="<?php echo RAIZ; ?>/assets/js/jqueryconfirm/jquery-confirm.min.js"></script>
     

@@ -68,13 +68,13 @@
 						</div><!-- col -->
 
 						<div class="col s12 m5 input-field">
-							<input type="text" name="nome_dono" id="nome_dono">
-							<label for="nome_dono">Nome</label>
+							<input type="text" name="nome_proprietario" id="nome_proprietario">
+							<label for="nome_proprietario">Nome</label>
 						</div>
 
 						<div class="col s12 m7 input-field">
-							<textarea id="informacoes_dono" name="informacoes_dono" class="materialize-textarea"></textarea>
-							<label for="informacoes_dono">Informações</label>
+							<input type="text" id="cpf_cnpj" name="cpf_cnpj" class="materialize-input cpfCnpj" placeholder="Apenas números"></input>
+							<label for="cpf_cnpj">CPF ou CNPJ</label>
 						</div>
 
 
@@ -82,13 +82,10 @@
 						<div class="col s12">
 				 			<div class="btn-content">
 				 				<!-- === Botão Voltar === -->
-								<button class="waves-effect waves-light btn btn-padrao btn-margin right"><i class="material-icons right">add</i>Adicionar Imóvel</button>
+								<button class="waves-effect waves-light btn btn-padrao btn-margin right"><i class="material-icons right">add</i>Adicionar proprietário</button>
 							</div><!-- btn-content -->
 						</div><!-- col -->
 
-	                	<!-- <div class="col s12">
-							<a href="<?php // echo RAIZ; ?>/imovel" class="btn btn-flat left">Voltar <i class="material-icons left">arrow_back</i></a>
-						</div> -->
 
 					</form>	
 
@@ -98,3 +95,6 @@
 		</div><!-- card -->
 	</div> <!-- col -->
 </div><!-- row -->
+
+
+<script type="text/javascript" src="<?php echo RAIZ; ?>/assets/js/jsOwner.js"></script>

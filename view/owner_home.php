@@ -220,7 +220,4 @@
 
 
 
-
-
-
-	<script type="text/javascript" src="<?php echo RAIZ; ?>/assets/js/jsImovel.js"></script>
+<script type="text/javascript" src="<?php echo RAIZ; ?>/assets/js/jsOwner.js"></script>
