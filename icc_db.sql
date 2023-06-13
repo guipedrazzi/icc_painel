@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.3
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 19-Fev-2019 às 19:56
--- Versão do servidor: 10.1.36-MariaDB
--- versão do PHP: 7.2.11
+-- Tempo de geração: 13-Jun-2023 às 03:06
+-- Versão do servidor: 10.4.27-MariaDB
+-- versão do PHP: 8.2.0
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -19,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `icc_db`
+-- Banco de dados: `icc_db`
 --
 
 -- --------------------------------------------------------
@@ -30,12 +29,12 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `cidade` (
   `id` int(11) NOT NULL,
-  `cod_ibge` int(11) DEFAULT '0',
+  `cod_ibge` int(11) DEFAULT 0,
   `nome` varchar(100) NOT NULL,
   `estado` int(11) NOT NULL,
   `populacao` int(11) NOT NULL,
-  `capital` int(11) NOT NULL DEFAULT '0'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `capital` int(11) NOT NULL DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Extraindo dados da tabela `cidade`
@@ -5639,10 +5638,10 @@ INSERT INTO `cidade` (`id`, `cod_ibge`, `nome`, `estado`, `populacao`, `capital`
 
 CREATE TABLE `estado` (
   `id` int(11) NOT NULL,
-  `nome` varchar(75) CHARACTER SET latin1 DEFAULT NULL,
-  `uf` varchar(5) CHARACTER SET latin1 DEFAULT NULL,
+  `nome` varchar(75) CHARACTER SET latin1 COLLATE latin1_swedish_ci DEFAULT NULL,
+  `uf` varchar(5) CHARACTER SET latin1 COLLATE latin1_swedish_ci DEFAULT NULL,
   `regiao` varchar(12) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Extraindo dados da tabela `estado`
@@ -5685,13 +5684,14 @@ INSERT INTO `estado` (`id`, `nome`, `uf`, `regiao`) VALUES
 
 CREATE TABLE `imovel` (
   `id_imovel` int(11) NOT NULL,
+  `id_proprietario` int(11) NOT NULL,
   `tipo` varchar(50) DEFAULT NULL,
   `metros_quadrados` varchar(10) DEFAULT NULL,
   `quartos` int(11) DEFAULT NULL,
   `banheiros` int(11) DEFAULT NULL,
   `vagas_garagem` int(11) DEFAULT NULL,
-  `observacao` text,
-  `endereco_google` varchar(200) DEFAULT NULL,
+  `observacao` text DEFAULT NULL,
+  `latitude_longitude` varchar(200) DEFAULT NULL,
   `estado_endereco` varchar(2) DEFAULT NULL,
   `cidade_endereco` varchar(50) DEFAULT NULL,
   `bairro_endereco` varchar(100) DEFAULT NULL,
@@ -5699,24 +5699,24 @@ CREATE TABLE `imovel` (
   `num_endereco` varchar(20) DEFAULT NULL,
   `comple_endereco` varchar(200) DEFAULT NULL,
   `nome_dono` varchar(100) DEFAULT NULL,
-  `informacoes_dono` text,
+  `informacoes_dono` text DEFAULT NULL,
   `data_cadastro` date NOT NULL,
   `hora_cadastro` time NOT NULL,
   `id_user_cadastro` int(11) NOT NULL,
   `data_edit` date DEFAULT NULL,
   `hora_edit` time DEFAULT NULL,
   `id_user_edit` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Extraindo dados da tabela `imovel`
 --
 
-INSERT INTO `imovel` (`id_imovel`, `tipo`, `metros_quadrados`, `quartos`, `banheiros`, `vagas_garagem`, `observacao`, `endereco_google`, `estado_endereco`, `cidade_endereco`, `bairro_endereco`, `rua_endereco`, `num_endereco`, `comple_endereco`, `nome_dono`, `informacoes_dono`, `data_cadastro`, `hora_cadastro`, `id_user_cadastro`, `data_edit`, `hora_edit`, `id_user_edit`) VALUES
-(2, 'Apartamento', '50', 2, 1, 1, 'Ótimo apartamento para temporada', NULL, '8', NULL, 'Centro', 'Rua teste', '231', 'Perto do teste', NULL, NULL, '2019-02-12', '15:54:01', 2, NULL, NULL, NULL),
-(5, 'Comercial', NULL, NULL, NULL, NULL, NULL, NULL, '2', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2019-02-12', '16:00:20', 2, NULL, NULL, NULL),
-(7, 'Fazenda', '152', 4, 2, 1, 'Ótimo Imóvel para se viver', NULL, '8', '1119', 'Centro', 'Rua teste', '3718', 'Perto do teste', NULL, NULL, '2019-02-18', '14:11:53', 2, NULL, NULL, NULL),
-(8, 'Casa', '35', 2, 1, 1, 'Casinha teste', NULL, '8', '139', 'Centro teste', 'Rua teste', '85', 'perto do teste', 'aewe', 'Info teste: tels\r\ntes:2391203\r\nae:324sa', '2019-02-18', '14:13:44', 2, '2019-02-18', '14:21:57', 2);
+INSERT INTO `imovel` (`id_imovel`, `id_proprietario`, `tipo`, `metros_quadrados`, `quartos`, `banheiros`, `vagas_garagem`, `observacao`, `latitude_longitude`, `estado_endereco`, `cidade_endereco`, `bairro_endereco`, `rua_endereco`, `num_endereco`, `comple_endereco`, `nome_dono`, `informacoes_dono`, `data_cadastro`, `hora_cadastro`, `id_user_cadastro`, `data_edit`, `hora_edit`, `id_user_edit`) VALUES
+(2, 0, 'Apartamento', '50', 2, 1, 1, 'Ótimo apartamento para temporada', NULL, '8', NULL, 'Centro', 'Rua teste', '231', 'Perto do teste', NULL, NULL, '2019-02-12', '15:54:01', 2, NULL, NULL, NULL),
+(5, 0, 'Comercial', NULL, NULL, NULL, NULL, NULL, NULL, '2', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2019-02-12', '16:00:20', 2, NULL, NULL, NULL),
+(7, 0, 'Fazenda', '152', 4, 2, 1, 'Ótimo Imóvel para se viver', NULL, '8', '1119', 'Centro', 'Rua teste', '3718', 'Perto do teste', NULL, NULL, '2019-02-18', '14:11:53', 2, NULL, NULL, NULL),
+(8, 0, 'Casa', '35', 2, 1, 1, 'Casinha teste', NULL, '8', '139', 'Centro teste', 'Rua teste', '85', 'perto do teste', 'aewe', 'Info teste: tels\r\ntes:2391203\r\nae:324sa', '2019-02-18', '14:13:44', 2, '2019-02-18', '14:21:57', 2);
 
 -- --------------------------------------------------------
 
@@ -5730,7 +5730,26 @@ CREATE TABLE `imovel_fotos` (
   `link_img` text NOT NULL,
   `nome_arquivo` varchar(200) DEFAULT NULL,
   `destaque` tinyint(1) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `proprietario`
+--
+
+CREATE TABLE `proprietario` (
+  `id_proprietario` int(11) NOT NULL,
+  `nome_proprietario` varchar(200) NOT NULL,
+  `tel1` varchar(30) NOT NULL,
+  `tel2` varchar(30) DEFAULT NULL,
+  `email` varchar(50) NOT NULL,
+  `cpf_cnpj` varchar(30) NOT NULL,
+  `data_cadastro` date NOT NULL DEFAULT current_timestamp(),
+  `id_user_cadastro` int(11) NOT NULL,
+  `data_edit` date DEFAULT NULL,
+  `id_user_edit` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 -- --------------------------------------------------------
 
@@ -5744,8 +5763,8 @@ CREATE TABLE `user_details` (
   `phone` varchar(15) DEFAULT NULL,
   `email` varchar(100) DEFAULT NULL,
   `birthdate` date NOT NULL DEFAULT '0000-00-00',
-  `type` tinyint(5) NOT NULL DEFAULT '0'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `type` tinyint(5) NOT NULL DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Extraindo dados da tabela `user_details`
@@ -5767,7 +5786,7 @@ CREATE TABLE `user_login` (
   `senha` varchar(60) NOT NULL,
   `id_user` int(11) NOT NULL,
   `last_login` datetime DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Extraindo dados da tabela `user_login`
@@ -5778,90 +5797,102 @@ INSERT INTO `user_login` (`id`, `login`, `senha`, `id_user`, `last_login`) VALUE
 (2, 'guigui', '$2y$10$jbTZxAGlEPuTubi4npeZOO2ohpAWUHkk9Bgp6xsAwX8ZD990lXqvO', 2, '2019-02-19 12:05:33');
 
 --
--- Indexes for dumped tables
+-- Índices para tabelas despejadas
 --
 
 --
--- Indexes for table `cidade`
+-- Índices para tabela `cidade`
 --
 ALTER TABLE `cidade`
   ADD PRIMARY KEY (`id`),
   ADD KEY `estado` (`estado`);
 
 --
--- Indexes for table `estado`
+-- Índices para tabela `estado`
 --
 ALTER TABLE `estado`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `imovel`
+-- Índices para tabela `imovel`
 --
 ALTER TABLE `imovel`
   ADD PRIMARY KEY (`id_imovel`);
 
 --
--- Indexes for table `imovel_fotos`
+-- Índices para tabela `imovel_fotos`
 --
 ALTER TABLE `imovel_fotos`
   ADD PRIMARY KEY (`id_foto`),
   ADD KEY `id_imovel` (`id_imovel`);
 
 --
--- Indexes for table `user_details`
+-- Índices para tabela `proprietario`
+--
+ALTER TABLE `proprietario`
+  ADD PRIMARY KEY (`id_proprietario`);
+
+--
+-- Índices para tabela `user_details`
 --
 ALTER TABLE `user_details`
   ADD PRIMARY KEY (`id_user`);
 
 --
--- Indexes for table `user_login`
+-- Índices para tabela `user_login`
 --
 ALTER TABLE `user_login`
   ADD PRIMARY KEY (`id`),
   ADD KEY `id_user` (`id_user`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT de tabelas despejadas
 --
 
 --
--- AUTO_INCREMENT for table `cidade`
+-- AUTO_INCREMENT de tabela `cidade`
 --
 ALTER TABLE `cidade`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5589;
 
 --
--- AUTO_INCREMENT for table `estado`
+-- AUTO_INCREMENT de tabela `estado`
 --
 ALTER TABLE `estado`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
--- AUTO_INCREMENT for table `imovel`
+-- AUTO_INCREMENT de tabela `imovel`
 --
 ALTER TABLE `imovel`
   MODIFY `id_imovel` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
--- AUTO_INCREMENT for table `imovel_fotos`
+-- AUTO_INCREMENT de tabela `imovel_fotos`
 --
 ALTER TABLE `imovel_fotos`
   MODIFY `id_foto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 
 --
--- AUTO_INCREMENT for table `user_details`
+-- AUTO_INCREMENT de tabela `proprietario`
+--
+ALTER TABLE `proprietario`
+  MODIFY `id_proprietario` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de tabela `user_details`
 --
 ALTER TABLE `user_details`
   MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT for table `user_login`
+-- AUTO_INCREMENT de tabela `user_login`
 --
 ALTER TABLE `user_login`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- Constraints for dumped tables
+-- Restrições para despejos de tabelas
 --
 
 --
